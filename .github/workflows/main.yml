@@ -13,8 +13,8 @@ jobs:
 
       - name: Build Docker Image
         run: docker build . --tag my-app:${{ github.sha }}
-- name: Test Docker Container
-     run: |
-       docker run -d --name test-app my-app:${{ github.sha }}
-       sleep 5
-       docker ps | grep test-app
+      - name: Test Docker Container
+        run: |
+         docker run -d --name test-app my-app:${{ github.sha }}
+         sleep 5
+          docker ps | grep test-app
